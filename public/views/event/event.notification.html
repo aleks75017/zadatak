@@ -1,0 +1,10 @@
+<div ng-controller="EventNotificationController as vm" class="relative">
+  <div ng-if="vm.message.type == 'ERROR'" class="alert bg-red remove-notification">
+    <span ng-click="vm.removeNotification()"><i class="icon icon-cross"></i></span>
+    <span>{{vm.message.contents || ''}}</span>
+  </div>
+  <div ng-if="vm.message.type == 'SUCCESS'" class="alert bg-blue remove-notification" >
+    <span ng-click="vm.removeNotification()"><i class="icon icon-cross"></i></span>
+    <span>{{vm.message.contents || ''}}</span>
+  </div>
+</div>

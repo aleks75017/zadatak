@@ -23,8 +23,8 @@
 
 		function activate() {
 
-			loadVenues()
-				.then(loadMap)
+			loadMap()
+				.then(loadVenues)
 				.then(loadMarkers);
 		}
 
@@ -33,20 +33,21 @@
 			vm.panelOpened = !vm.panelOpened;
 		}
 
-		function loadVenues() {
+		function loadVenues(mapx) {
 
 			var center = vm.mapConfig.center.split(',');
-
+           // debugger;
 			return venueService
-				.search(center[0], center[1], 200)
-				.then(function(venues) { 
+				.search(center[0], center[1], 200,mapx)
+				.then(function(venues) {
 					vm.venues = venues;
-					return true;
+					return mapx;
 				});
 		}
 
 		function loadMap() {
 
+        //debugger;
 			return NgMap.getMap()
 				.then(function(map) { return map; })
 				.catch(function(e) { console.log(e); });

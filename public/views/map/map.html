@@ -1,0 +1,21 @@
+<div ng-controller="MapController as vm">
+	<ng-map 
+	    center="{{vm.mapConfig.center}}" 
+	    max-zoom="{{vm.mapConfig.maxZoom}}"
+	    zoom="{{vm.mapConfig.zoom}}"
+	    styles="{{vm.mapConfig.style}}" 
+	    class="map"></ng-map>
+
+
+    <div class="right-panel" ng-class="{ 'open': vm.panelOpened, 'closed': !vm.panelOpened }">
+    	<a href="" class="panel-toggler" ng-click="vm.togglePanel()">
+    		<span class="icon icon-chevron-left" ng-if="!vm.panelOpened"></span>
+    		<span class="icon icon-chevron-right" ng-if="vm.panelOpened"></span>
+    	</a>
+    	<div class="content">
+    		
+    		<div ng-include="'views/venues/venues.venue-info.html'" ng-repeat="venue in vm.venues"></div>
+
+    	</div>
+    </div>
+</div>

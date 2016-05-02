@@ -1,0 +1,37 @@
+  <!DOCTYPE html>
+  <html ng-app="backoffice" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title>The Fastest Belgrade Food</title>
+
+    <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
+    <link href="css/compiled.css" rel="stylesheet">
+    <link href="css/css.css" rel="stylesheet">
+
+    <style>
+      /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+      /* this chunk of css is not part of the toolkit :) */
+      body {
+        width: 1px;
+        min-width: 100%;
+        *width: 100%;
+      }
+    </style>
+
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyDvKjhdr5eLP0z9g5BIW71__YDgtZPn5ok"></script>
+  </head>
+
+  <body class="with-top-navbar">
+    <div ng-include="'/views/event/event.notification.html'" class="notification-container"></div>
+    <div ui-view></div>
+    
+    <script src="js/libraries.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
